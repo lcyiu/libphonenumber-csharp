@@ -33,8 +33,7 @@ namespace PhoneNumbers
             phoneUtil = PhoneNumberUtil.GetInstance();
         }
 
-        // @VisibleForTesting
-        public ShortNumberUtil(PhoneNumberUtil util)
+        internal ShortNumberUtil(PhoneNumberUtil util)
         {
             phoneUtil = util;
         }

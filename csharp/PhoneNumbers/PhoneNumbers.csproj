@@ -45,10 +45,15 @@
   <ItemGroup>
     <Compile Remove="compat\ISet.cs" />
     <Compile Remove="compat\SortedSet.cs" />
+    <Compile Remove="compat\FileMode.cs" />
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net35' ">
     <Compile Include="compat\ISet.cs" />
     <Compile Include="compat\SortedSet.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'portable-net45+win8+wpa81+wp8' ">
+    <Compile Include="compat\FileMode.cs" />
   </ItemGroup>
 </Project>
