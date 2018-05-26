@@ -48,7 +48,9 @@ namespace PhoneNumbers
         {
             public StreamReader LoadMetadata(string metadataFileName)
             {
-                return new StreamReader(new FileStream(metadataFileName, FileMode.Open));
+                //TODO should prob take in stream because of static
+                var stream = Assembly.GetManifestResourceStream(metadataFileName);
+                return new StreamReader(stream);
             }
         }
 
@@ -238,6 +240,7 @@ namespace PhoneNumbers
                 var metadataCollection = new PhoneMetadataCollection();
                 try
                 {
+                    //TODO fix read external
                     metadataCollection.re(ois);
                 }
                 catch (IOException e)

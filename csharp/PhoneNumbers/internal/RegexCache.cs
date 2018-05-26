@@ -16,7 +16,7 @@
 
 using System.Collections.Generic;
 
-namespace PhoneNumbers
+namespace PhoneNumbers.Internal
 {
     public class RegexCache
     {

@@ -16,6 +16,7 @@
 
 using System;
 using System.Linq;
+using PhoneNumbers.Internal;
 
 namespace PhoneNumbers.Internal
 {
@@ -37,7 +38,7 @@ namespace PhoneNumbers.Internal
             var nationalNumberPattern = numberDesc.NationalNumberPattern;
             // We don't want to consider it a prefix match when matching non-empty input against an empty
             // pattern.
-            return nationalNumberPattern.Any() &&
+            return nationalNumberPattern.Length > 0 &&
                    Match(number, regexCache.GetPatternForRegex(nationalNumberPattern), allowPrefixMatch);
         }
 
